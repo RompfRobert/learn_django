@@ -12,6 +12,8 @@ A simple starter Django project for planning meetings.
 
 1. **Create and activate a virtual environment** (strongly recommended):
 
+   A virtual environment ensures that your project dependencies are isolated from other Python projects on your system.
+
    ```bash
    python3 -m venv .venv
 
@@ -22,11 +24,26 @@ A simple starter Django project for planning meetings.
    source .venv/bin/activate
    ```
 
-2. **Install Django**:
+   > If you encounter issues activating the virtual environment, ensure your Python installation is correctly configured in your system’s PATH.
+
+2. **Verify Python and pip versions**:
+
+   Before proceeding, ensure you have the correct versions installed:
+
+   ```bash
+   python3 --version
+   pip --version
+   ```
+
+   You should see Python 3.8+ and a recent version of pip.
+
+3. **Install Django**:
 
    ```bash
    pip install django
    ```
+
+   This installs the latest version of Django in your virtual environment.
 
 ## Starting the Project
 
@@ -36,42 +53,51 @@ Use Django’s built-in admin script to scaffold your project:
 django-admin startproject meeting_planner
 ```
 
-> This creates a new directory called `meeting_planner` containing your project files.
+> The `django-admin` command is a utility provided by Django to help you create and manage projects. This command creates a new directory called `meeting_planner` containing your project files.
 
 ## Exploring the Project
 
-```bash
-# Move into the project directory
-cd meeting_planner
+1. **Navigate to the project directory**:
 
-# Verify the layout
-tree .  # or use your IDE’s file-explorer
-```
+   ```bash
+   cd meeting_planner
+   ```
 
-You should see something like:
+2. **Verify the project layout**:
 
-```
-meeting_planner/
-├── manage.py
-├── db.sqlite3            # Auto-created when you run the server
-└── meeting_planner/      # Inner folder—your actual Django project
-    ├── __init__.py
-    ├── asgi.py
-    ├── settings.py       # Main configuration file
-    ├── urls.py           # URL routing
-    └── wsgi.py
-```
+   ```bash
+   tree .  # or use your IDE’s file-explorer
+   ```
+
+   You should see something like:
+
+   ```
+   meeting_planner/
+   ├── manage.py
+   ├── db.sqlite3            # Auto-created when you run the server
+   └── meeting_planner/      # Inner folder—your actual Django project
+       ├── __init__.py
+       ├── asgi.py
+       ├── settings.py       # Main configuration file
+       ├── urls.py           # URL routing
+       └── wsgi.py
+   ```
 
 ## Running the Development Server
 
-```bash
-python manage.py runserver
-```
+1. **Start the server**:
 
-- By default, the server runs at `http://127.0.0.1:8000/`  
-- To stop the server, return to the terminal and press <kbd>Ctrl</kbd>+<kbd>C</kbd>.
+   ```bash
+   python manage.py runserver
+   ```
 
-If you don’t see any output in your IDE’s file browser (e.g. PyCharm), right-click the project root and choose **Reload from Disk** (or similar).
+   - By default, the server runs at `http://127.0.0.1:8000/`.  
+   - To stop the server, return to the terminal and press <kbd>Ctrl</kbd>+<kbd>C</kbd>.
+
+2. **Troubleshooting**:
+
+   - If you encounter issues, ensure you are in the `meeting_planner` directory before running the command.
+   - If you don’t see any output in your IDE’s file browser (e.g., PyCharm), right-click the project root and choose **Reload from Disk** (or similar).
 
 ## Next Steps
 
@@ -90,4 +116,4 @@ If you don’t see any output in your IDE’s file browser (e.g. PyCharm), right
   - Static files, templates, etc.
 - Define URL patterns in `meeting_planner/urls.py`.
 
-Happy coding!  
+Happy coding!
